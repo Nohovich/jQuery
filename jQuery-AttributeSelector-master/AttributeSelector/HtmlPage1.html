@@ -1,0 +1,43 @@
+﻿<!--
+
+https://csharp-video-tutorials.blogspot.com/2015/03/jquery-attribute-value-selector.html
+    $('[attribute]')
+    $('[attribute="value"]')
+
+$('[title]') // Selects all elements that have title attribute
+$('div[title]') // Selects all div elements that have title attribute
+$('[title="divTitle"]') // Selects all elements that have title attribute value - divTitle
+$('div[title="divTitle"]') // Selects all div elements that have title attribute value - divTitle
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // the following code to make the jQuery attribute value selector case-insensitive 
+            $('div[title]').filter(function () {
+            return $(this).attr('title').toLowerCase() == 'divtitle';
+        }).css('border', '3px solid red');
+        });
+    </script>
+</head>
+<body>
+    <div title="divTitle" style="background-color:red">
+        Red DIV
+    </div>
+    <br />
+    <div title="divTitle" style="background-color:green">
+        Green DIV
+    </div>
+    <br />
+    <div title="divTitle">
+        Normal Div
+    </div>
+    <br />
+    <div>
+        Normal Div without any attributes
+    </div>
+</body>
+</html>

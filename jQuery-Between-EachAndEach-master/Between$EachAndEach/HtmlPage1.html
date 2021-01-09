@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var result = '';
+            // .each() method is used to iterate over the items in a jQuery collection
+            $('li').each(function (index, element) {
+                result += 'Index = ' + index + ', Value = ' + $(element).text() + '<br/>';
+                //or
+                //result += 'Index = ' + index + ', Value = ' + $(this).text() + '<br/>';
+            });
+            $('#resultDiv').html(result);
+
+             var jsObject = {
+                'USA': 'Washington D.C.',
+                'India': 'New Delhi',
+                'UK': 'London',
+                'Australia': 'Canberra'
+            };
+
+             result = '';
+            // $.each() method is used to iterate over javascript objects or arrays.
+            $.each(jsObject, function (key, value) {
+                result += key + ' - ' + value + '<br/>';
+            });
+
+            $('#resultDiv2').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="resultDiv"></div>
+    <div id="resultDiv2"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!-- how to load HTML data from the server using jquery AJAX load function. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // geting all the inputs of type text
+            var textBoxes = $('input[type="text"]');
+            textBoxes.focus(function () {
+                // get the id using the attribute and adding HelpDiv
+                var helpDiv = $(this).attr('id') + 'HelpDiv';
+                // loding to the helpDiv the ajax(passing the html pgae and the data we need from the html page(ID)) 
+                $('#' + helpDiv).load('Help.html #' + helpDiv);
+            });
+
+            textBoxes.blur(function () {
+                var helpDiv = $(this).attr('id') + 'HelpDiv';
+                // deleting the ajax data
+                $('#' + helpDiv).html('');
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td><input id="firstName" type="text" /></td>
+            <td><div id="firstNameHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input id="lastName" type="text" /></td>
+            <td><div id="lastNameHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input id="email" type="text" /></td>
+            <td><div id="emailHelpDiv"></div></td>
+        </tr>
+        <tr>
+            <td>Income</td>
+            <td><input id="income" type="text" /></td>
+            <td><div id="incomeHelpDiv"></div></td>
+        </tr>
+    </table>
+</body>
+</html>

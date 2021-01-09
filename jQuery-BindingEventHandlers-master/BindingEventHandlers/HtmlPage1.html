@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .ButtonStyle {
+            background-color: red;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        // In this code we are binding a single anonymous function as the event handler for all the 3 events
+        $(document).ready(function () {
+            $('#btnClickMe').on('click mouseover mouseout', function (event) {
+                if (event.type == 'click') {
+                    $('#divResult').html('Button Clicked at ' + 'X = '
+                        + event.pageX + ' Y = ' + event.pageY);
+                }
+                else if (event.type == 'mouseover') {
+                    $(this).addClass('ButtonStyle');
+                }
+                else {
+                    $(this).removeClass('ButtonStyle');
+                }
+            });
+
+            $('#btnEnableMouseOverEffect').click(function () {
+                $('#btnClickMe').on('mouseover', function () {
+                    $(this).addClass('ButtonStyle');
+                });
+            });
+
+            $('#btnDisableMouseOverEffect').click(function () {
+                $('#btnClickMe').off('mouseover');
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btnClickMe" type="button" value="Click Me" />
+    <input id="btnEnableMouseOverEffect" type="button"
+           value="Enable Mouse Over Effect" />
+    <input id="btnDisableMouseOverEffect" type="button"
+           value="Disable Mouse Over Effect" />
+    <br /><br />
+    <div id="divResult"></div>
+</body>
+</html>

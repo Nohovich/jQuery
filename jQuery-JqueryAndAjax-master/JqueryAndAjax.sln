@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryAndAjax", "JqueryAndAjax\JqueryAndAjax.csproj", "{19863620-8B27-4412-8D27-CE199D0A20CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxLoadAspx", "AjaxLoadAspx\AjaxLoadAspx.csproj", "{1F6AD514-3111-40EB-AB36-CD6EDCDD2B97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19863620-8B27-4412-8D27-CE199D0A20CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19863620-8B27-4412-8D27-CE199D0A20CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19863620-8B27-4412-8D27-CE199D0A20CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19863620-8B27-4412-8D27-CE199D0A20CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6AD514-3111-40EB-AB36-CD6EDCDD2B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6AD514-3111-40EB-AB36-CD6EDCDD2B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6AD514-3111-40EB-AB36-CD6EDCDD2B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6AD514-3111-40EB-AB36-CD6EDCDD2B97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCAE45E3-C777-4FBA-B3FE-A7D5198EBFDA}
+	EndGlobalSection
+EndGlobal

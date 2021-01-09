@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreaseDecreaseFontSize", "IncreaseDecreaseFontSize\IncreaseDecreaseFontSize.csproj", "{DB5DFEF3-C177-4C6A-A15B-F85A7EF1D480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB5DFEF3-C177-4C6A-A15B-F85A7EF1D480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5DFEF3-C177-4C6A-A15B-F85A7EF1D480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5DFEF3-C177-4C6A-A15B-F85A7EF1D480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5DFEF3-C177-4C6A-A15B-F85A7EF1D480}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46AFE882-9615-48B7-906F-CD4664E2E314}
+	EndGlobalSection
+EndGlobal

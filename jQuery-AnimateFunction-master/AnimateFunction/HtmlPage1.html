@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myImage').click(function () {
+                $(this)
+                    .animate({ 'left': '300' })
+                    .animate({ 'top': '200' })
+                    .animate({ 'left': '10' })
+                    .animate({ 'top': '10' });
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <img id="myImage" height="100" width="100" style="position:absolute" src="Images/1.jpg" />
+</body>
+</html>

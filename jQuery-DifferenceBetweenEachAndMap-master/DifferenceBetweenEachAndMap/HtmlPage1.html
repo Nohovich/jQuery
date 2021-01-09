@@ -1,0 +1,45 @@
+﻿<!--
+ $.map
+    map method can be used as an iterator.
+    map method Returns a new array
+    The order of callback arguments - element, index.
+    Does not have a way to terminate the iteration
+    -->
+<!--
+ $.each
+    each method is an immutable iterator
+    Returns the original array
+    The order of callback arguments - index, element.
+    Return false to terminate the iteration
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var intArray = [1, 2, 3, 4, 5];
+
+            function functionA(index, element) {
+                return element * 5;
+            }
+
+            function functionB(element, index) {
+                return element * 5;
+            }
+
+            var result1 = $.each(intArray, functionA);
+            var result2 = $.map(intArray, functionB);
+
+            document.write('each = ' + result1);
+            document.write('<br/>')
+            document.write('map = ' + result2);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

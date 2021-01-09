@@ -1,0 +1,23 @@
+﻿<!--document.getElementById() is faster than jQuery('#id') selector.
+    Use document.getElementById() over jQuery('#id') selector unless,
+    you need the extra functionality provided by the jQuery object.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($('#button1').length > 0) {
+                alert('Element found')
+            }
+            else {
+                alert('Element not found')
+            }
+        });
+    </script>
+</head>
+<body>
+    <input id="button1" type="button" value="Click Me" />
+</body>
+</html>

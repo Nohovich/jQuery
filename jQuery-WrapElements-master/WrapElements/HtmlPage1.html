@@ -1,0 +1,39 @@
+﻿<!--
+ wrap - Wrap an HTML structure around each element in the set of matched elements.
+ unwrap - Remove the parents of the set of matched elements from the DOM.
+ wrapAll - Wrap an HTML structure around all elements in the set of matched elements
+ wrapInner - Wrap an HTML structure around the content of each element in the set of matched elements.
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .containerDiv {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+        }
+    </style>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert($('div.containerDiv').length);
+            $('div').wrap('<div class="containerDiv"></div>');
+            alert($('div.containerDiv').length);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1">
+        DIV 1
+    </div>
+    <div id="div2">
+        DIV 2
+    </div>
+    <div id="div3">
+        DIV 3
+    </div>
+</body>
+</html>

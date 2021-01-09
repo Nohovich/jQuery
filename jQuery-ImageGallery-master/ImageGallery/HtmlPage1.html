@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .imgStyle {
+            width: 100px;
+            height: 100px;
+            border: 3px solid grey;
+        }
+    </style>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        //  When you click on an img element, the event gets bubbled up to its parent (div) as the img element does not have an event handler 
+        $(document).ready(function () {
+            $('#divId').on({
+                mouseover: function () {
+                    $(this).css({
+                        'cursor': 'hand',
+                        'border-Color': 'red'
+                    });
+                },
+                mouseout: function () {
+                    $(this).css({
+                        'cursor': 'default',
+                        'border-Color': 'grey'
+                    });
+                },
+                click: function () {
+                    var imageURL = $(this).attr('src');
+                    var effect = $('#selectImgEffect').val();
+                    var duration = $('#selectImgDuration').val() * 1000;
+
+                    if (effect == 'Slide') {
+                        $('#mainImage').slideUp(duration, function () {
+                            $(this).attr('src', imageURL);
+                        }).slideDown(duration);
+                    }
+                    else {
+                        $('#mainImage').fadeOut(duration, function () {
+                            $(this).attr('src', imageURL);
+                        }).fadeIn(duration);
+                    }
+                }
+            }, 'img');
+
+            var mainImageElement = $('#mainImage');
+            var height = parseInt(mainImageElement.attr('height'));
+            var width = parseInt(mainImageElement.attr('width'))
+
+            $('#btnEnlarge').click(function () {
+                height += 100;
+                width += 100;
+                mainImageElement.animate({ 'height': height, 'width': width });
+            });
+
+            $('#btnShrink').click(function () {
+                height -= 100;
+                width -= 100;
+                mainImageElement.animate({ 'height': height, 'width': width });
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    Select Effect :
+    <select id="selectImgEffect">
+        <option value="Fade">Fade</option>
+        <option value="Slide">Slide</option>
+    </select>
+    Time in seconds:
+    <select id="selectImgDuration">
+        <option value="0.5">0.5</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input id="btnEnlarge" type="button" value="Enlarge" />
+    <input id="btnShrink" type="button" value="Shrink" />
+    <br /><br />
+    <img id="mainImage" style="border:3px solid grey"
+        src="Images/1.jpg" height="500" width="540" />
+    <br />
+    <div id="divId">
+        <img class="imgStyle" src="Images/1.jpg" />
+        <img class="imgStyle" src="Images/2.jpg" />
+        <img class="imgStyle" src="Images/3.jpg" />
+        <img class="imgStyle" src="Images/4.jpg" />
+        <img class="imgStyle" src="Images/5.jpg" />
+
+    </div>
+</body>
+</html>

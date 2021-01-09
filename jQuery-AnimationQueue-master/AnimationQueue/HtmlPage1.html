@@ -1,0 +1,54 @@
+﻿<!-- http://api.jquery.com/animate -->
+<!-- https://csharp-video-tutorials.blogspot.com/2015/05/jquery-animation-queue.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myDivClass {
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid black;
+            opacity: .4;
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myButton').click(function () {
+                // To globally disable all animations
+                //$.fx.off = true or jQuery.fx.off = true
+                jQuery.fx.off = $('#chkBox').is(':checked');
+
+                $('#myDiv1')
+                    .animate({ 'width': 500 }, 1500)
+                    .animate({ 'padding': 20 }, 1500)
+                    .animate({ 'font-size': 50 }, 1500)
+                    .animate({ 'border-width': 10 }, 1500)
+                    .animate({ 'opacity': 1 }, 1500)
+
+                $('#myDiv2')
+                    .animate({ 'width': 500 }, 1500)
+                    .animate({ 'padding': 20 }, 1500)
+                    .animate({ 'font-size': 50 }, 1500)
+                    .animate({ 'border-width': 10 }, 1500)
+                    .animate({ 'opacity': 1 }, 1500);
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input type="button" id="myButton" value="Start Animation" />
+    <input id="chkBox" type="checkbox" /> Turn off animations
+    <br /><br />
+    <div id="myDiv1" class="myDivClass">
+        jQuery animations
+    </div>
+    <br />
+    <div id="myDiv2" class="myDivClass">
+        jQuery
+    </div>
+</body>
+</html>

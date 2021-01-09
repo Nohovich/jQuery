@@ -1,0 +1,34 @@
+﻿<!--
+    Why is it important to check if an event is already bound
+To prevent attaching event handler multiple times.
+-
+The following code checks if a click event handler is already bound.
+    If it's not already bound, then a click event handler is attached.
+    (this only works if you have attached event handlers using jQuery)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jQueryObject = $('#btn');
+            var rawDOMElement = jQueryObject.get(0);
+            var eventObject = $._data(rawDOMElement, 'events');
+
+            if (eventObject != undefined && eventObject.click != undefined) {
+                alert('Click event exists');
+            }
+            else {
+                $('#btn').on('click', function () {
+                    alert('Button Clicked');
+                });
+            }
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btn" type="button" value="Click Me" />
+</body>
+</html>

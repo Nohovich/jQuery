@@ -1,0 +1,35 @@
+﻿<!--
+     In this code the click event handler is attached to the parent element (ul). 
+    Even if you have 500 list items, there is only one click event handler in memory.
+
+    1. When you click on a list item (li), the event gets bubbled up to its parent (ul) as the list item (li) does not have an event handler
+    2. The bubbled event is handled by the the parent (ul) element, as it has a click event handler.
+    3. When a new list item is added dynamicaly, you don't have to add the click event handler to it.
+    Since the newly created list item (li) is added to the same parent element (ul),
+    the click event of this list item also gets bubbled upto the same parent and will be handled by it.
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul').on('click', 'li', function () {
+                $(this).fadeOut(500);
+            });
+
+            $('#btnAdd').on('click', function () {
+                $('ul').append('<li>New List Item</li>');
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btnAdd" type="button" value="Add a New List Item" />
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+</body>
+</html>

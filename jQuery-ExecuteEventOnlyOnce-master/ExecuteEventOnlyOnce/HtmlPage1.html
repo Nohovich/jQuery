@@ -1,0 +1,30 @@
+﻿<!--
+    one() function executes the handler at most once per element per event type.
+    In the following example, click, mouseover and mouseount events are executed atmost once for each button element.
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[type="button"]').one({
+                mouseover: function () {
+                    $(this).css('background-color', 'yellow');
+                },
+                mouseout: function () {
+                    $(this).css('background-color', 'white');
+                },
+                click: function () {
+                    alert('Button clicked');
+                }
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input type="button" value="Click Me" />
+    <input type="button" value="Click Me" />
+</body>
+</html>

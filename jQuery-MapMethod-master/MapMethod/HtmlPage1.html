@@ -1,0 +1,30 @@
+﻿<!--
+    if you want to create an array or concatenated string based on all matched elements in a jQuery selector,
+    it is better to use map() over each() method.
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <!-- Using map() method  -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert($('li').map(function (index, element) {
+                return $(element).text();
+            }).get());
+        });
+    </script>
+
+</head>
+<body>
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+</body>
+</html>

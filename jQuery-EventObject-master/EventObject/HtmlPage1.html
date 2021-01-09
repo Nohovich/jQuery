@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                getEventDetails(event);
+            }).mouseover(function () {
+                getEventDetails(event);
+            }).mouseout(function () {
+                getEventDetails(event);
+            });
+
+            function getEventDetails(event) {
+                var e = $.event.fix(event);
+                var eventDetails = "Event = " + e.type +
+                    "<br/> X = " + e.pageX +
+                    "<br/>Y = " + e.pageY +
+                    "<br/>Target Type = " + e.target.type +
+                    "<br/>Target Tag Name = " + e.target.tagName;
+
+                $('#divResult').html(eventDetails);
+            }
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btn" type="button" value="Click me" /><br /><br />
+    <div id="divResult"></div>
+</body>
+</html>

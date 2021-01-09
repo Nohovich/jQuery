@@ -1,0 +1,38 @@
+﻿<!-- The following example, keeps track of whether the user scrolled up or down. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var lastScrollTop = 0;
+            $('div').scroll(function () {
+                var currentScrollPosition = $(this).scrollTop();
+                if (currentScrollPosition > lastScrollTop) {
+                    $('h3').text('You scrolled down');
+                } else {
+                    $('h3').text('You scrolled up');
+                }
+                lastScrollTop = currentScrollPosition;
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div style="width:300px; height:200px; border:1px solid black; overflow:scroll">
+        "Are they any old legends attached to the castle?" asked Conrad of his sister. Conrad was a prosperous Hamburg merchant, but he was the one poetically-dispositioned member of an eminently practical family.
+
+        The Baroness Gruebel shrugged her plump shoulders.
+
+        "There are always legends hanging about these old places. They are not difficult to invent and they cost nothing. In this case there is a story that when any one dies in the castle all the dogs in the village and the wild beasts in forest howl the night long. It would not be pleasant to listen to, would it?"
+
+        "It would be weird and romantic," said the Hamburg merchant.
+
+        "Anyhow, it isn't true," said the Baroness complacently; "since we bought the place we have had proof that nothing of the sort happens. When the old mother-in-law died last springtime we all listened, but there was no howling. It is just a story that lends dignity to the place without costing anything."
+
+        "The story is not as you have told it," said Amalie, the grey old governess. Every one turned and looked at her in astonishment. She was wont to sit silent and prim and faded in her place at table, never speaking unless some one spoke to her, and there were few who troubled themselves to make conversation with her. To-day a sudden volubility had descended on her; she continued to talk, rapidly and nervously, looking straight in front of her and seeming to address no one in particular.
+    </div>
+    <br />
+    <h3 style="display:inline; color:red"></h3>
+</body>
+</html>

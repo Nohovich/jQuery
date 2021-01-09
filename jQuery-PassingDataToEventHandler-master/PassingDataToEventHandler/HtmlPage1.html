@@ -1,0 +1,42 @@
+﻿<!--
+    1. Binds the click event handler to the button using on function
+    2. We are passing 3 arguments to the on() function
+    a) The name of the event
+    b) JSON object that contains data that we want to pass to the event handler
+    c) Event handler method name
+    3. In the event handler method (sayHello), we access the data using event object's data property.
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnClickMe').on('click', {
+                firstName: 'John',
+                lastName: 'Doe'
+            }, sayHello);
+
+            $('#btnClickMe').on('click', {
+                firstName: 'Mary'
+            }, sayHello);
+
+            $('#btnClickMe').on('click', sayHello);
+
+            function sayHello(event) {
+                if (event.data == null) {
+                    alert('No name provided');
+                }
+                else {
+                    alert('Hello ' + event.data.firstName +
+                        (event.data.lastName != null ? ' ' + event.data.lastName : ''));
+                }
+            }
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btnClickMe" type="button" value="Click Me" />
+</body>
+</html>
